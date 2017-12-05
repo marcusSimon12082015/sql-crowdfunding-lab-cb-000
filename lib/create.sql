@@ -17,7 +17,8 @@ CREATE TABLE users
 
 CREATE TABLE users
 (
-  id_user INTEGER,
-  id_project INTEGER,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER,
+  project_id INTEGER,
   amount NUMBER
 );
