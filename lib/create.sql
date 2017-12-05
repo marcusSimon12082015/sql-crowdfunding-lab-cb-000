@@ -8,12 +8,16 @@ CREATE TABLE projects
   end_date DATE
 );
 
-CREATE TABLE projects
+CREATE TABLE users
 (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  title TEXT,
-  category TEXT,
-  fundingGoal NUMBER,
-  startDate DATE,
-  endDate DATE
+  name TEXT,
+  age NUMBER
+);
+
+CREATE TABLE users
+(
+  id_user INTEGER,
+  id_project INTEGER,
+  amount NUMBER
 );
