@@ -28,7 +28,7 @@ end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
 "SELECT p.category, SUM(pl.amount) FROM projects p INNER JOIN pledges pl "+
-"GROUP BY p.category WHERE p.category = 'music'"
+"WHERE p.category = 'music' GROUP BY p.category"
 end
 
 def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_books_category
