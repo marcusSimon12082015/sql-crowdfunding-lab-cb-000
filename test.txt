@@ -1,0 +1,24 @@
+
+crowdfunder sql
+  create.sql
+    creates a projects table with an id as a primary key (FAILED - 1)
+
+Failures:
+
+  1) crowdfunder sql create.sql creates a projects table with an id as a primary key
+     Failure/Error: @sql_runner.execute_create_sql
+     SQLite3::SQLException:
+       table users already exists
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:91:in `initialize'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:91:in `new'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:91:in `prepare'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:223:in `execute_batch'
+     # ./spec/crowdfunder_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+Finished in 0.00139 seconds (files took 0.27162 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/crowdfunder_spec.rb:14 # crowdfunder sql create.sql creates a projects table with an id as a primary key
+
