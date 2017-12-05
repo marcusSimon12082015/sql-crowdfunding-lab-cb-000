@@ -1,0 +1,44 @@
+
+crowdfunder sql
+  create.sql
+    creates a projects table with an id as a primary key
+    creates a projects table with a title field
+    creates a projects table with a category field
+    creates a projects table with a funding_goal field
+    creates a projects table with a start_date field
+    creates a projects table with a end_date field
+    creates a users table with an id as a primary key
+    creates a users table with a name field
+    creates a users table with an age field
+    creates a pledges table with an id as a primary key
+    creates a pledges table with an amount field
+    creates a pledges table with a user_id field
+    creates a pledges table with a project_id field
+  insert.sql
+    has 20 users
+    has 10 projects
+    has 30 pledges
+  questions
+    #selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_name
+    #selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
+    #selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal (FAILED - 1)
+
+Failures:
+
+  1) crowdfunder sql questions #selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
+     Failure/Error: expect(@db.execute(selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal)).to eq([["My book on SQL", 0], ["The next Inna-Gadda-Davida", 142]])
+     SQLite3::SQLException:
+       near ">": syntax error
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:91:in `initialize'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:91:in `new'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:91:in `prepare'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.10/lib/sqlite3/database.rb:134:in `execute'
+     # ./spec/crowdfunder_spec.rb:106:in `block (3 levels) in <top (required)>'
+
+Finished in 0.01994 seconds (files took 0.17401 seconds to load)
+19 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/crowdfunder_spec.rb:105 # crowdfunder sql questions #selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
+
